@@ -1,0 +1,116 @@
+.clearfix {zoom: 1;}
+
+.nav li {
+  display: inline;
+  zoom: expression(
+    runtimeStyle.zoom = 1,
+    previousSibling ? 0 : className += ' first-child',
+    nextSibling ? 0 : className += ' last-child'
+  );
+}
+.nav li.first-child ul {
+  left: 0;
+}
+.nav li span {
+  float: left;
+}
+.nav li.hover li {
+  background-position: 18px .65em;
+}
+.nav li.hover ul {
+  margin-top: -3px;
+}
+* html .nav li.hover .br {
+  bottom: expression(
+    parentNode.offsetHeight % 2 ? '-1px' : '0'
+  );
+}
+
+html>body .nav li.t,
+html>body .nav li.b {
+  margin: -3px 0;
+}
+
+.rounded {
+  zoom: 1;
+}
+.main ol li {
+  margin-left: 30px;
+  position: relative;
+  left: -10px;
+}
+
+.content h1,
+.cbox_inner h2 {
+  zoom: expression(
+    runtimeStyle.zoom = 0,
+    previousSibling ? 0 : className += ' first-child'
+  );
+}
+
+.subnav li {zoom: 1;}
+
+.cbox .item .item-i {zoom: 1;}
+
+.cbox .item {
+  display: inline;
+  zoom: 1;
+}
+* html .cbox .item .img {
+  margin-right: 12px;
+}
+
+.img .rounded-i {
+  /* :-[ */
+  width: expression(
+    runtimeStyle.width = 'auto',
+    parentNode.style.width = offsetWidth + 'px'
+  );
+}
+html>body .img .rounded-i {
+  zoom: 1;
+}
+html>body .img img {
+  float: left;
+}
+
+
+.content .information-table li,
+.seminars .pagination ul li,
+.main_push .pagination ul li,
+.information .information-list-inline li,
+.consultation form label .lbl,
+.gallery-inline .item,
+.more li {
+  display: inline;
+  zoom: 1;
+}
+
+
+.more li {
+  width: expression(
+    runtimeStyle.width = 'auto',
+    previousSibling ? 0 : className += ' first-child'
+  );
+}
+.more {
+  position: relative;
+  margin-left: -30px;
+  left: 30px;
+}
+
+html>body .carousel .clients li img {
+  position: relative;
+  left: expression(
+    runtimeStyle.left = (parentNode.offsetWidth - offsetWidth) / 2 + 'px'
+  );
+}
+
+.carousel .clients li span {zoom: 1;}
+
+#lbCloseLink {
+    zoom: expression(
+        runtimeStyle.zoom = 0,
+        innerText = "Закрыть"
+    );
+}
